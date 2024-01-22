@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafik Gempa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #c3e6cb;">
+    <header>
+        <h1 style="color: #007bff;">Grafik Gempa</h1>
+    </header>
+    <section>
+        <div class="chart">
+            
+            <canvas id="barChart" width="400" height="200"></canvas>
+        </div>
+        <div class="infographic">
+           
+            <img src="images/infografis.jpg" alt="Infografis Gempa">
+        </div>
+        <a href="komentar.html" class="button">Beri Komentar</a>
+    </section>
+    <footer>
+        <p style="color: #333;">&copy; 2024 Daffa Danur Windha</p>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        
+        var ctx = document.getElementById('barChart').getContext('2d');
+        var barChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun'],
+                datasets: [{
+                    label: 'Gempa per Bulan',
+                    data: [10, 8, 15, 7, 12, 9],
+                    backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
